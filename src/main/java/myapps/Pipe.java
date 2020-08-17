@@ -18,8 +18,8 @@ public class Pipe {
 
         final StreamsBuilder builder = new StreamsBuilder();
 
-        KStream<String, String> source = builder.stream("streams-input");
-        source.to("streams-pipe-output");
+        KStream<Object, Object> source = builder.stream("streams-input");
+        source.to("streams-output");
 
         final Topology topology = builder.build();
         System.out.println(topology.describe());
